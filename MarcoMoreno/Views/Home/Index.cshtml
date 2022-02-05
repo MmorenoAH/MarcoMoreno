@@ -1,0 +1,46 @@
+﻿@model List<MarcoMoreno.Models.Paciente>;
+
+@{
+    ViewData["Title"] = "Home Page";
+
+
+
+}
+
+<h1 class="text-success">Lista de Pacientes</h1>
+
+<div>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <td>Nombre Cliente</td>
+                <td> Direccion</td>
+                <td>Telefono</td>
+                <td>Edad</td>  
+            </tr>
+        </thead>
+        <tbody>
+           @{
+               foreach(var item in Model)
+               {
+                   <tr>
+                       <td>@item.Nombre</td>
+                       <td>@item.Direccion</td>
+                       <td>@item.Telefono</td>
+                       <td>@item.Edad</td>
+                   </tr>
+               }
+           }
+               
+           
+           
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a class="btn btn-outline-info"> Crear Nuevo </a>
+</div>
+
+<hr />
+@DateTime.Now.ToShortDateString()
